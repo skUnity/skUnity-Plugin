@@ -1,0 +1,64 @@
+#
+# Welcome to the configuration file for the official skUnity Plugin
+# This file is home to multiple settings that allow you to control
+# the skUnity Plugin. Some settings might be ignored while this plugin
+# is in development. Settings will be added during development and the
+# config file will update automatically but will retain your current values
+#
+
+#
+# Configuration --
+#
+
+# Enter your skUnity Docs API key (found at: https://docs.skunity.com/admin/api)
+# This is required to access the data needed to actually use the skUnity plugin
+api-key: enter key here
+
+# Allow OP'd players to override the permission system for the /skunity commnad
+op-override: false
+
+# Should the plugin ignore scripts that are disabled (start with a hyphen)
+ignore-disabled-scripts: false
+
+# If an update is found, should it be downloaded automatically?
+#   WARNING: There is no way of telling if the release is safe or stable.
+#            It's possible for a conflict to happen when the script is being
+#            overwritten and installed by skUnity.
+#            This option is set to false by default to prevent any damage
+#            being done to your system. 
+#	WARNING: this option is currently ignored (no auto-update system)
+auto-download-updates: false
+
+# When running the update check on the scripts folder, skUnity checks folders within the scripts folder,
+# this means that you can still keep your scripts organised and have them checked for updates. This doesn't
+# happen with the plugins folder and can be toggled on and off
+#	WARNING: this option is currently ignored (forced recursive = true)
+recursive-scripts-folder-search: true
+
+# Show's debug messages and other dev related stuff. You shouldn't need to enable this, 
+# but does give information when things happen and can be used to help resolve bugs
+enable-debug: false
+
+# Should skUnity try and load plugins that you install via skUGet automatically? 
+# Sometimes plugins may misbehave due to the way that they're loaded in after
+# Bukkit and Skript have loaded and set up. While this will hopefully always work,
+# you may have to reload/restart the server yourself.
+auto-run-plugins: true
+
+# skUnity will run scripts automatically when downloaded or reload them when they're updated.  
+auto-run-scripts: true
+
+# If you've enabled auto-run-scripts, when skUnity has a script to load/reload, it can be done as console
+# or as the user that ran the command. If you set this to true, the Skript output from loading the script
+# will be shown in console, but if set to false, then the Skript output will be shown to the user. The user
+# who executed the skUnity command must have permission to load scripts for it to work.
+auto-run-scripts-as-console: false
+
+# The skUnity Plugin provides some hooks into Skript and allows script developers have limited access to
+# the skUnity API. If something goes wrong, such as a download error, should this be logged into console?
+# It's helpful to see why something didn't happen or went wrong
+show-skript-errors: true
+
+# Just ignore this... it's to ensure your configuration version is always correct. Changing it will probably
+# break something! This number is independent to the main versioning system 
+config-version: 3

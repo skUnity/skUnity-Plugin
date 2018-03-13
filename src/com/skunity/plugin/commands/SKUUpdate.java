@@ -3,10 +3,7 @@ package com.skunity.plugin.commands;
 import java.io.File;
 import java.io.IOException;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
-import org.bukkit.plugin.Plugin;
-
 import com.google.common.io.Files;
 import com.skunity.plugin.Main;
 import com.skunity.plugin.SkunityCommand;
@@ -67,8 +64,14 @@ public class SKUUpdate extends SKUSubCommand {
 				PlayerChat.warning("Unable to update the skUnity Plugin. Please download from https://skunity.com/plugin");
 				return;
 			}
-			Files.move(downloadHere, new File(Main.backupsFolder.getPath() + "/" + file.getFile().getName()));
-			File newFile = HttpDownloadUtility.downloadFile(file.getDownloadURL(), "./plugins/Skript/scripts/");
+			//Files.move(downloadHere, new File(Main.backupsFolder.getPath() + "/" + file.getFile().getName()));
+			File newFile = null;
+			if(file.getPath().endsWith(".sk")) {
+				newFile = HttpDownloadUtility.downloadFile(file.getDownloadURL(), "./plugins/Skript/scripts/");
+			} else {
+				newFile = HttpDownloadUtility.downloadFile(file.getDownloadURL(), "./plugins/");
+			}
+			
 			if(newFile.exists()) {
 				PlayerChat.success("Successfully updated that file!");
 			} else {

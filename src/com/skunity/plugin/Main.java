@@ -27,7 +27,6 @@ public class Main extends JavaPlugin {
 	
 	public static java.util.logging.Logger bukkitLogger = Bukkit.getLogger();
 	public static Class<?> logger;
-	public final static Double version = 1.1;
 	public static CommandRegistry commandRegistry = new CommandRegistry();
 	public static CommandUtils commandUtils = new CommandUtils(null);
 	public static Main skUnity;
@@ -35,6 +34,7 @@ public class Main extends JavaPlugin {
 	public static File backupsFolder;
 	public static YAMLManager yamlConfig;
 	
+	public final static Double version = 1.2;
 	private static final Integer configVersion = 3;
 	
 	public void onEnable() {

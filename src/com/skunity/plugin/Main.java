@@ -17,6 +17,7 @@ import com.skunity.plugin.commands.SKUMyDownloads;
 import com.skunity.plugin.commands.SKUInfo;
 import com.skunity.plugin.commands.SKUReloadConfig;
 import com.skunity.plugin.commands.SKUUpdate;
+import com.skunity.plugin.connect.WebConnector;
 import com.skunity.plugin.updater.Updater;
 import com.skunity.plugin.utils.CommandRegistry;
 import com.skunity.plugin.utils.CommandUtils;
@@ -84,7 +85,10 @@ public class Main extends JavaPlugin {
 			skUnityAddon.loadClasses("com.skunity.plugin", "skript");
 		} catch (IOException e) {
 			e.printStackTrace();
-		}	
+		}
+		Logger.info("Starting WebConnector");
+		new WebConnector();
+		Logger.info("Started WebConnector");
 	}
 	
 	public static CommandRegistry getCommandRegistry() {

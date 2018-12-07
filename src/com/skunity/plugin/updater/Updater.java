@@ -2,6 +2,8 @@ package com.skunity.plugin.updater;
 
 import java.io.File;
 
+import net.md_5.bungee.api.ChatColor;
+
 import org.bukkit.Bukkit;
 
 import com.skunity.plugin.Logger;
@@ -42,15 +44,24 @@ public class Updater {
 			mode = 3;
 		}
 		Logger.debug("Updater started in mode " + mode);
-		// TODO:
-		// Remove this line below because its just for debugging
-		mode = 1;
-		/*if(mode == 1 || mode == 3) {
-			CommandUtils.logUpdateInfo(SKUCheck.checkScripts());
+		if(mode == 1 || mode == 3) {
+			CommandUtils.logUpdateInfo(
+					CommandUtils.checkScripts(),
+					ChatColor.RED,
+					"/sku update %hash%",
+					"%title% is out date, click to update it",
+					true
+			);
 		}
 		if(mode == 2 || mode == 3) {
-			CommandUtils.logUpdateInfo(SKUCheck.checkPlugins());
-		}*/
+			CommandUtils.logUpdateInfo(
+					CommandUtils.checkScripts(),
+					ChatColor.RED,
+					"/sku update %hash%",
+					"%title% is out date, click to update it",
+					true
+			);
+		}
 	}
 
 }

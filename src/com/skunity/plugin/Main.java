@@ -34,7 +34,7 @@ public class Main extends JavaPlugin {
 	public static File backupsFolder;
 	public static YAMLManager yamlConfig;
 	
-	public final static Double version = 1.2;
+	public static final Double version = 1.2;
 	private static final Integer configVersion = 3;
 	
 	public void onEnable() {
